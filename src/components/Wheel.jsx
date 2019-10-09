@@ -171,7 +171,7 @@ export default class Header_Desktop extends React.Component{
 
     rotate() {
         let transform = {deg: 0}
-        gsap.TweenMax.to(transform, 1, {
+        gsap.TweenMax.to(transform, 30, {
             deg: 36000 + Math.random() * 360,
             onUpdate: () => {
                 this.setState({rotate: transform.deg%360});
