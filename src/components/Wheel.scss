@@ -1,0 +1,135 @@
+@import '../mixins.scss';
+
+.wheel-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .trophies {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            width: 50%;
+            position: absolute;
+            left: 0;
+
+            &:nth-child(2) {
+                transform: rotateY(180deg);
+                left: 50%;
+            }
+        }
+    }
+
+    .arrow {
+        width: 35px;
+        height: 70px;
+        position: absolute;
+        top:0;
+        left:50%;
+        transform: translateX(-50%);
+        background-color: #8e44ad;
+        z-index: 1;
+
+        &:after {
+            content: '';
+            transform: rotate(45deg) translate(-12%, 60%);;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            z-index: 2;
+            background-color: #8e44ad;
+            box-shadow: 10px 10px 10px black;
+        }
+    }
+
+    svg {
+        filter: drop-shadow(11px 19px 30px black);
+    }
+
+    .winner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .winner-inner {
+            width: 32em;
+            height: 32em;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            img {
+                width: 100%;
+            }
+    
+            .winner-name {
+                position: absolute;
+                bottom: -30%;
+                left:50%;
+                transform: translateX(-50%);
+                font-size: 6em;
+                color: #1f1f1f;
+                font-weight: bold;
+                text-transform: uppercase;
+                background-color: #f1f1f1;
+                padding: 0.2em 1em;
+                border-radius: 0.2em;
+                box-shadow: 10px 10px 30px 10px #1f1f1f;
+                border:4px solid #1f1f1f;
+    
+                span {
+                }
+    
+                &:after {}
+            }
+        }
+
+    }
+
+    .presenters {
+        width: 65.6875em;
+        height: 66.4375em;
+        top: 50%;
+        left: 49.5%;
+        transform: translate(-50%, -50%);
+        @include on-circle($item-count: 14, $circle-size: 45em, $item-size: 5em); 
+        position: absolute;
+        perspective: 34em;
+        z-index: 1;
+
+        .presenter {
+            width: 6em;
+            height: 6em;;
+            img { 
+              display: block; 
+              max-width: 100%; 
+              border-radius: 50%;
+              border: solid 5px white;
+              transition: .15s;
+              width: 5em;
+              height: 5em;
+            }
+        }
+      }
+}

@@ -1,0 +1,122 @@
+@import './fonts.scss';
+@import './mixins.scss';
+
+body {
+  overflow: hidden;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  perspective: 34em;
+
+  &:after {
+    content:'';
+    position: absolute;
+    top: -600em;
+    left: -600em;
+    width: 1200em;
+    height: 1200em;
+    background-image: url('./assets//img/logo.png');
+    background-repeat: repeat;
+    background-size: 15em;
+    z-index: -1;
+    opacity: 0.1;
+    transform: rotate(-30deg)
+  }
+}
+
+.curtains {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  z-index: 99;
+}
+
+.box {
+  background-color: white;
+  width: 32em;
+  height: 32em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 8px 8px 17px 9px #0000005e;
+  box-sizing: border-box;
+  padding:2em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  border-radius: 50%;
+
+  .first-line {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    .bouvet-logo {
+      max-width:10em;
+    }
+  
+    span {
+      font-family: 'gillius';
+      font-size:2em;
+      line-height: 0.7;
+      margin-left: 0.2em;
+    }
+  }
+
+  p {
+    font-family: 'Baba-nue';
+    font-size: 4em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    span {
+      color: #FF6400;
+    }
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #27AE60;
+    box-shadow: none;
+    border: none;
+    color: white;
+    padding: 0.2em 1.2em;
+    font-size: 3em;
+    box-shadow: 5px 5px 14px 1px #a2a0a0;
+    font-family: 'gillius';
+    letter-spacing: 0.1em;
+    padding-top: 0.3em;
+    transition: box-shadow 0.5s ease-in;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  
+}
+
+
+.App-logo {
+}
+
+.App-header {
+}
+
+.App-link {
+  color: #09d3ac;
+}
